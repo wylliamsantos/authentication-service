@@ -43,8 +43,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-task printUsername() {
-    def username = System.getenv("USERNAME_GITHUB")
-    println "Username do GitHub: $username"
-}

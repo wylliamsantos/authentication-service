@@ -31,15 +31,16 @@ Install the dependencies and devDependencies and start the server.
 
 ## Docker
 
-There are two environment variables possible pointing to HOST and PORT of your SMTP server
-- MAIL_SERVER_HOST
-- MAIL_SERVER_PORT
+There are three environment variables possible pointing to HOST, PORT and DATABASE for postgres configuration
+- POSTGRES_HOST
+- POSTGRES_PORT
+- POSTGRES_DATABASE
 
 ```sh
-docker run --name email-service -e MAIL_SERVER_HOST=localhost -e MAIL_SERVER_PORT=1026 -p 8080:8080 -d wylliamsantos/email-service
+docker run --name email-service -e POSTGRES_HOST=localhost -e POSTGRES_PORT=1026 -e POSTGRES_DATABASE=test_database -p 8080:8080 -d wylliamsantos/email-service
 ```
 
-> Note 1: Image is pushed automatically to DockerHub when you commit code using Github Actions.
+> Note 1: Image is pushed automatically to DockerHub when you make a release/tag on Git repository
 
 ```sh
 127.0.0.1:8080
@@ -47,4 +48,4 @@ docker run --name email-service -e MAIL_SERVER_HOST=localhost -e MAIL_SERVER_POR
 
 ## Swagger
 
-http://localhost:8080/swagger-ui/index.html#/email-api/send
+http://localhost:8080/swagger-ui/index.html#
